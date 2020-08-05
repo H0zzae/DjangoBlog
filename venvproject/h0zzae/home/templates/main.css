@@ -1,0 +1,143 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 10%;
+	padding: 0;
+	background-color: #F6F0F8;
+}
+#titlediv{
+	width: 90%;
+	position: absolute;
+}
+#titleBackground {
+	width: 84%;
+	height: 30px;
+	background-color: #B3DCF3;
+	background-position: 10px 150px;
+	position: absolute;
+	left: -2%;
+	top: 163px;
+	z-index: 1;
+}
+h1 {
+	font-size: 3em;
+	padding: 0;
+	margin: 128px 0px 0px 0px;
+	position: relative;
+	z-index: 2;
+}
+#nav {
+	top:166px;
+	position: absolute;
+	margin: 0 0 0 70%;
+	z-index:3;
+}
+#nav a {
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 5px;
+}
+#nav a:hover {
+	text-decoration: #fff underline;
+}
+#contents {
+	 margin: 0 0 0 0;
+	 padding: 0;
+ }
+#profile {
+	position: relative;
+	width: 200px;
+	height: 600px;
+	display: inline-block;
+	padding: 42px 0 0 1%;
+	text-align: center;
+
+}
+#profile img {
+	width: 200px;
+	height: 200px;
+	background-color: #fff;
+	border-radius: 156px;
+	Corner Radius: 156px
+}
+#profile_name {
+	font-size: 1.3em;
+	margin: 21px 0 10px 0;
+}
+#profile_detail{
+	width: 154px;
+	height: 161px;
+	margin: 0 0 0 20px;
+	border-top: #B3DCF3 solid 3px;
+	text-align: center;
+}
+#view_more {
+	color: #000;
+	text-decoration: none;
+}
+#view_more:hover {
+	 text-decoration: underline;
+ }
+#postPart{
+	display: inline-block;
+	width: 80%;
+	height: 70%;
+	margin: 0 0 0 40px;
+	padding: 42px 0 0 48px;
+	position: absolute;
+	border-left: 3px dashed #B3DCF3;
+}
+.post{
+	position: absolute;
+	width: 55%;
+	height: 30%;
+	background-color: rgb(255,255,255,0.7);
+	border-radius: 22px;
+	border: #E2DEFA solid;
+}
+#newPost {
+
+}
+#bestPost {
+	top: 40%;
+	position: absolute;
+}
+#adminDetail {
+	position: absolute;
+	width: 50%;
+	height: 452px;
+	left: 250px;
+	top: 245px;
+	background-color: #E2DEFA;
+	border-radius: 39px;
+}
+#postDiv {
+	width: 80%;
+}
+#postCategory {
+	position: absolute;
+	width: 80%;
+	height: auto;
+	background-color: #E2DEFA;
+	border-radius: 20px;
+	margin: 62px 0 0 0;
+	padding: 20px 0 20px 26px;
+}
+#postCategory td a{
+	color: #000;
+	text-decoration: none;
+}
+#postCategory td a:hover{
+	 color: #000;
+	 text-decoration: underline;
+ }
+#newestPostperCategory {
+	position: absolute;
+	margin: 220px 0 0 0;
+	padding: 20px 0 20px 20px;
+	width: 80%;
+	height: 300%;
+	background-color: rgb(255,255,255);
+	border-radius: 20px;
+	border: #E2DEFA solid 3px;
+}
