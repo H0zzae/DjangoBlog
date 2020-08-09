@@ -2,7 +2,6 @@
 # Default ignored files
 /workspace.xml
 db.sqlite3
-manage.py
 settings.py
 myBlog
 .idea
