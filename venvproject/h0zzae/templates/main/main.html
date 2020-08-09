@@ -1,28 +1,28 @@
-<!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <title>
         Blog
     </title>
-    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <body>
 <div id="titlediv">
     <h1>H00000ch</h1>
     <div id="nav">
         <a href="./main.html">Main</a>
-        <a href="./profile.html">Profile</a>
-        <a href="./Post.html">Post</a>
+        <a href="../profile/profile.html">Profile</a>
+        <a href="../Post/Post.html">Post</a>
     </div>
     <div id="titleBackground"/>
 
 </div>
 <div id="contents">
     <div id="profile">
-        <img src="image/profile_photo.jpg">
+        <img src="../image/profile_photo.jpg">
         <div id="profile_name">H0zzaelimi</div>
         <div id="profile_detail">profile detail</div>
-        <a id="view_more" href="./profile.html">more</a>
+        <a id="view_more" href="../profile/profile.html">more</a>
     </div>
     <div id="postPart">
         <div id="newPost" class="post">
