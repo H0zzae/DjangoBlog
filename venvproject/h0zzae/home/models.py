@@ -6,12 +6,12 @@ class Category(models.Model):
     name = models.CharField(max_length=50, null=False, verbose_name = "카테고리 제목")
 
 class Post(models.Model):
-    category_num = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name = "소속 카테고리 번호")
+    # category_num = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name = "소속 카테고리 번호")
     title = models.CharField(max_length=50, null=False, verbose_name = "게시글 제목")
     content = models.TextField(null=False, verbose_name = "게시글 내용")
     created_at = models.DateTimeField(default = timezone.now, verbose_name = "작성시간")
     edited_at = models.DateTimeField(default = timezone.now, verbose_name = "수정시간")
-    attach = models.FileField(null = True, verbose_name = "첨부파일")
+    attach = models.FileField(null=True, verbose_name = "첨부파일")
 
 class Reply(models.Model):
     post_num = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name="소속 게시글 번호")

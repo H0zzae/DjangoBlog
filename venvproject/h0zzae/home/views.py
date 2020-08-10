@@ -17,7 +17,7 @@ def write(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('/writePost')
+        return redirect('/post')
     else:
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
