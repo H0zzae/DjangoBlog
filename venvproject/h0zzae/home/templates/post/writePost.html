@@ -1,0 +1,13 @@
+{% extends "post/post.html" %}
+
+{% block content %}
+    <div id="">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="text" name="Title" placeholder="제목을 입력해주세요">
+            <textarea name="content" placeholder="내용을 작성해주세요"></textarea>
+            <button type="submit" value="전송">전송</button>
+        </form>
+    </div>
+{% endblock %}

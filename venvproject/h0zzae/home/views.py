@@ -20,4 +20,4 @@ def write(request):
         return redirect('/writePost')
     else:
         form = PostForm()
-    return render(request, 'writePost.html', {'form':form})
+    return render(request, 'post/writePost.html', {'form':form})
