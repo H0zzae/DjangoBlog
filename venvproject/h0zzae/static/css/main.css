@@ -1,12 +1,12 @@
 body {
-	width: 100%;
+	width: 80%;
 	height: 100%;
-	margin: 0 0 0 10%;
+	margin: 0 0 0 200px;
 	padding: 0;
 	background-color: #F6F0F8;
 }
 #titlediv{
-	width: 90%;
+	width: 80%;
 	position: absolute;
 }
 #titleBackground {
@@ -29,10 +29,11 @@ h1 {
 #nav {
 	top:166px;
 	position: absolute;
-	margin: 0 0 0 70%;
+	margin: 0 0 0 60%;
 	z-index:3;
 }
 #nav a {
+    display: inline-block;
 	color: #FFF;
 	text-decoration: none;
 	margin-right: 5px;
