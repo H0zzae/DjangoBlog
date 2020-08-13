@@ -1,25 +1,9 @@
+{% extends "../TopNavBar/topnav.html" %}
 {% load static %}
-<html>
-<head>
-    <title>
-        Blog
-    </title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head>
-<body>
-<div id="titlediv">
-    <h1>H00000ch</h1>
-    <div id="nav">
-        <a href="/">Main</a>
-        <a href="/profile/">Profile</a>
-        <a href="/post/">Post</a>
-    </div>
-    <div id="titleBackground"/>
-
-</div>
+{% block mainContent %}
 <div id="contents">
     <div id="profile">
-        <img src="{% static 'image/profiel_photo.jpg' %}">
+        <img src="{%static 'image/profile_photo.jpg' %}">
         <div id="profile_name">H0zzaelimi</div>
         <div id="profile_detail">profile detail</div>
         <a id="view_more" href="../profile/profile.html">more</a>
@@ -34,7 +18,5 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maxime quia temporibus. Deleniti dolor eaque fuga fugiat illum quasi suscipit! Laborum, quas, voluptas. Beatae blanditiis dicta rerum similique vero voluptatum.
         </div>
     </div>
-
 </div>
-</body>
-</html>
+{% endblock mainContent %}

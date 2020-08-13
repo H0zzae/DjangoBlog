@@ -1,0 +1,22 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+    <div id="titlediv">
+        <h1>H00000ch</h1>
+            <div id="nav">
+                <a href="/">Main</a>
+                <a href="/profile/">Profile</a>
+                <a href="/post/">Post</a>
+            </div>
+        <div id="titleBackground"/>
+    </div>
+    {% block mainContent %}{% endblock mainContent %}
+    {% block content %}{% endblock content %}
+    {% block postContent %}{% endblock postContent %}
+</body>
+</html>

@@ -1,11 +1,12 @@
-{% extends "post/post.html" %}
-
+{% extends "../TopNavBar/topnav.html" %}
+{% load static %}
 {% block content %}
-    <div id="">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <div id="writePostForm">
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="글쓰기">
+            <input type="submit" value="작성완료">
         </form>
     </div>
-{% endblock %}
+{% endblock content %}

@@ -1,20 +1,7 @@
+{% extends "../TopNavBar/topnav.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-</head>
-<body>
-    <div id="titlediv">
-        <h1>H00000ch</h1>
-        <div id="nav">
-            <a href="/">Main</a>
-            <a href="/profile/">Profile</a>
-            <a href="/post/">Post</a>
-        </div>
-        <div id="titleBackground"/>
-    </div>
+{% block postContent %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
     <div id="postDiv">
         <div id="postCategory">
             <table>
@@ -33,10 +20,8 @@
             </table>
         </div>
         <div id="newestPostperCategory">
-            <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% block content %}{% endblock content %}
+            <button onclick="location.href = '/writePost/'">글쓰기</button>
         </div>
     </div>
-
-</body>
-</html>
+{% endblock postContent %}

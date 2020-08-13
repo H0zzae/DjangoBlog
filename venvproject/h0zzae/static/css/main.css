@@ -141,3 +141,10 @@ h1 {
 	border-radius: 20px;
 	border: #E2DEFA solid 3px;
 }
+#writePostForm {
+    width : 80%;
+    height: 300%;
+    background-color: rgb(255,255,255);
+	border-radius: 20px;
+	border: #E2DEFA solid 3px;
+}
