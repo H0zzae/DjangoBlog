@@ -14,9 +14,10 @@ def profile(request):
 
 def write(request):
     if request.method=='POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
+            print("hihi")
         return redirect('/post')
     else:
         form = PostForm()
