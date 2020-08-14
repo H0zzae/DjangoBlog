@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404, HttpResponse
 from .models import *
 from .forms import PostForm
 
@@ -22,3 +22,11 @@ def write(request):
     else:
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
+
+def getCategory(request):
+    categorys = Category.objects.all()
+
+    return render(request, 'templates/post/post.html', {'categorys':categorys})
+def getPost(request):
+    posts = Post.objects.all()
+    return render(request, 'post/post.html',{'posts':posts})

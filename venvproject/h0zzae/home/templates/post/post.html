@@ -4,24 +4,17 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <div id="postDiv">
         <div id="postCategory">
-            <table>
-                <tr>
-                    <td><a href="">Game</a></td>
-                </tr>
-                <tr>
-                    <td><a href="">Develop</a></td>
-                </tr>
-                <tr>
-                    <td><a href="">Daily</a></td>
-                </tr>
-                <tr>
-                    <td><a href="">Diet</a></td>
-                </tr>
-            </table>
+            {% for category in categorys %}
+                <p>{{category.name}}</p>
+            {% endfor %}
         </div>
         <div id="newestPostperCategory">
             {% block content %}{% endblock content %}
             <button onclick="location.href = '/writePost/'">글쓰기</button>
+            {% for post in posts %}
+                <p>{{post.title}}</p>
+                <p>{{post.content}}</p>
+            {% endfor %}
         </div>
     </div>
 {% endblock postContent %}

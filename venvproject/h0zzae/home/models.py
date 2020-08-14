@@ -5,6 +5,8 @@ from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,Permissi
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(default="newCategory", max_length=50, null=False, verbose_name = "카테고리 제목")
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     # category_num = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name = "소속 카테고리 번호")
@@ -13,6 +15,8 @@ class Post(models.Model):
     created_at = models.DateTimeField(default = timezone.now, verbose_name = "작성시간")
     edited_at = models.DateTimeField(default = timezone.now, verbose_name = "수정시간")
     attach = models.ImageField(upload_to ="h0zzae/h0zzae/static/image", null=False, default="", verbose_name = "첨부파일")
+    def __str__(self):
+        return self.title
 
 class Reply(models.Model):
     post_num = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name="소속 게시글 번호")
