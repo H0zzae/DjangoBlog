@@ -115,7 +115,7 @@ h1 {
 	width: 80%;
 }
 #postCategory {
-	position: absolute;
+	position: relative;
 	width: 80%;
 	height: auto;
 	background-color: #E2DEFA;
@@ -123,17 +123,19 @@ h1 {
 	margin: 62px 0 0 0;
 	padding: 20px 0 20px 26px;
 }
-#postCategory td a{
+#postCategory a{
+    display : block;
+    padding : 0 0 10px 0;
 	color: #000;
 	text-decoration: none;
 }
-#postCategory td a:hover{
+#postCategory a:hover{
 	 color: #000;
 	 text-decoration: underline;
  }
 #newestPostperCategory {
-	position: absolute;
-	margin: 220px 0 0 0;
+	position: relative;
+	margin: 20px 0 0 0;
 	padding: 20px 0 20px 20px;
 	width: 80%;
 	height: 300%;

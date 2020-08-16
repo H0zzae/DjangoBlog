@@ -5,14 +5,14 @@
     <div id="postDiv">
         <div id="postCategory">
             {% for category in categorys %}
-                <p>{{category.name}}</p>
+                <a href="">{{category.name}}</a>
             {% endfor %}
         </div>
         <div id="newestPostperCategory">
             {% block content %}{% endblock content %}
             <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% for post in posts %}
-                <p>{{post.title}}</p>
+                <h1>{{post.title}}</h1>
                 <p>{{post.content}}</p>
             {% endfor %}
         </div>

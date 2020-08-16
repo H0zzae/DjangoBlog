@@ -7,7 +7,10 @@ def main(request):
     return render(request,'main/main.html')
 
 def post(request):
-    return render(request,'post/post.html')
+    categorys = Category.objects.all()
+    posts = Post.objects.all()
+
+    return render(request,'post/post.html', {'categorys': categorys,'posts':posts})
 
 def profile(request):
     return render(request, 'profile/profile.html')
@@ -22,11 +25,3 @@ def write(request):
     else:
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
-
-def getCategory(request):
-    categorys = Category.objects.all()
-
-    return render(request, 'templates/post/post.html', {'categorys':categorys})
-def getPost(request):
-    posts = Post.objects.all()
-    return render(request, 'post/post.html',{'posts':posts})
