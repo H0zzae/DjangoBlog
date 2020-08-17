@@ -1,0 +1,20 @@
+{% extends "../TopNavBar/topnav.html" %}
+{% load static %}
+{% block postContent %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <div id="postDiv">
+        <div id="postCategory">
+            {% for category in categorys %}
+                <a href="">{{category.name}}</a>
+            {% endfor %}
+        </div>
+        <div id="newestPostperCategory">
+            {% block content %}{% endblock content %}
+            <button onclick="location.href = '/writePost/'">글쓰기</button>
+            {% for post in posts %}
+                <a href="/post/">{{post.title}}</a>
+                <p>{{post.content}}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock postContent %}

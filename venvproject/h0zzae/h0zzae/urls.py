@@ -20,7 +20,8 @@ import home.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home.views.main, name='main'),
-    path('post/', home.views.post, name='post'),
+    path('postmain/', home.views.postmain, name='postmain'),
     path('profile/', home.views.profile, name='profile'),
     path('writePost/', home.views.write, name='writePost'),
+    path('post/',home.views.getPost, name ="post"),
 ]

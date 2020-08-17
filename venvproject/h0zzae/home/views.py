@@ -6,11 +6,11 @@ from .forms import PostForm
 def main(request):
     return render(request,'main/main.html')
 
-def post(request):
+def postmain(request):
     categorys = Category.objects.all()
     posts = Post.objects.all()
 
-    return render(request,'post/post.html', {'categorys': categorys,'posts':posts})
+    return render(request,'post/postMain.html', {'categorys': categorys,'posts':posts})
 
 def profile(request):
     return render(request, 'profile/profile.html')
@@ -21,7 +21,13 @@ def write(request):
         if form.is_valid():
             form.save()
             print("hihi")
-        return redirect('/post')
+        return redirect('/postmain')
     else:
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
+
+def getPost(request):
+    posts = Post.objects.all()
+    replys = Reply.objects.all()
+
+    return render(request,'post/post.html',{'posts':posts,'replys':replys})
