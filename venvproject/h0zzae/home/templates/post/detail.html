@@ -6,7 +6,14 @@
 <p>{{post.created_at}}</p>
 <image>{{post.attach}}</image>
 <p>{{post.content}}</p>
-    {% for reply in replys %}
+    <div class="ReplyFormPart">
+        <form action="" method="post" >
+            {% csrf_token %}
+            {{ reply_form.as_p }}
+            <input type="submit" value="작성완료">
+        </form>
+    </div>
+{% for reply in replys %}
     <div>
         <p>{{replay.post_num}}</p>
         <p>{{reply.userName}}</p>
