@@ -12,8 +12,11 @@
             {% block content %}{% endblock content %}
             <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% for post in posts %}
-                <a href="/post/">{{post.title}}</a>
-                <p>{{post.content}}</p>
+                <br>
+                <a href="">{{post.title}}</a>
+                <p>{{post.summary}}</p>
+                <a href="">...더보기</a>
+                <br>
             {% endfor %}
         </div>
     </div>

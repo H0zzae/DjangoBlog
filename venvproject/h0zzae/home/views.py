@@ -21,13 +21,12 @@ def write(request):
         if form.is_valid():
             form.save()
             print("hihi")
-        return redirect('/postmain')
+        return redirect('/post')
     else:
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
 
-def getPost(request):
-    posts = Post.objects.all()
-    replys = Reply.objects.all()
+def getPost(request,post_id):
+    post_detail = get_object_or_404(Post, pk=post_id)
 
-    return render(request,'post/post.html',{'posts':posts,'replys':replys})
+    return render(request,'post/detail.html',{'post':post_detail})

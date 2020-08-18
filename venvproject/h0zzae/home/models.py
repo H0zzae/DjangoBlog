@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager,PermissionsMixin
+from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
@@ -17,6 +18,8 @@ class Post(models.Model):
     attach = models.ImageField(upload_to ="h0zzae/h0zzae/static/image", null=False, default="", verbose_name = "첨부파일")
     def __str__(self):
         return self.title
+    def summary(self):
+        return self.content[:100]
 
 class Reply(models.Model):
     post_num = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name="소속 게시글 번호")
