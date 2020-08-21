@@ -31,7 +31,7 @@ def getPost(request,post_id):
     if request.method == 'POST':
         reply_form = ReplyForm(request.POST)
         # reply_form.instance.userName_id = request.user.id
-        reply_form.post_num = post_id
+        reply_form.instance.post_num_id = post_id
         if reply_form.is_valid():
             replyform = reply_form.save()
     reply_form = ReplyForm()
