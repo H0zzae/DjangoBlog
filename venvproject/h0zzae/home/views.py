@@ -25,28 +25,15 @@ def write(request):
         form = PostForm()
     return render(request, 'post/writePost.html', {'form':form})
 
-def writeReply(request,post_id):
+def getPost(request,post_id):
     post = get_object_or_404(Post, pk=post_id)
 
-    if request.method=='POST':
-        form = ReplyForm(request.POST)
-        form.instance.userName_id = request.user.id
-        form.instance.post_id = post_id
-        if form.is_valid():
-            form = form.save()
-    form = ReplyForm()
-    replys = Reply.objects.all()
-    return render(request,'post/detail.html',{'form':form})
-
-def getPost(request,post_id):
-    post_detail = get_object_or_404(Post, pk=post_id)
-
-    if request.method=='POST':
-        form = ReplyForm(request.POST)
-        form.instance.userName_id = request.user.id
-        form.instance.post_id = post_id
-        if form.is_valid():
-            form = form.save()
-    form = ReplyForm()
-    replys = Reply.objects.all()
-    return render(request,'post/detail.html',{'post':post_detail,'replys':replys,'reply_form':form})
+    if request.method == 'POST':
+        reply_form = ReplyForm(request.POST)
+        # reply_form.instance.userName_id = request.user.id
+        reply_form.post_num = post_id
+        if reply_form.is_valid():
+            replyform = reply_form.save()
+    reply_form = ReplyForm()
+    Replys = post.Replys.all()
+    return render(request, 'post/detail.html', {'post': post, 'replys': Replys, 'reply_form': reply_form})

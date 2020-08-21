@@ -10,12 +10,11 @@
         <form action="" method="post" >
             {% csrf_token %}
             {{ reply_form.as_p }}
-            <input type="submit" value="작성완료">
+            <input type="submit" value="댓글달기">
         </form>
     </div>
 {% for reply in replys %}
     <div>
-        <p>{{replay.post_num}}</p>
         <p>{{reply.userName}}</p>
         <p>{{reply.created_at}}</p>
         <p>{{reply.content}}</p>

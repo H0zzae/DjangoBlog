@@ -22,7 +22,7 @@ class Post(models.Model):
         return self.content[:100]
 
 class Reply(models.Model):
-    post_num = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name="소속 게시글 번호")
+    post_num = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name="소속 게시글 번호", related_name='Replys')
     userName = models.CharField(max_length=10, verbose_name="댓글작성자")
     content = models.CharField(max_length=200, verbose_name="댓글내용")
     password = models.CharField(max_length=4, verbose_name="댓글 비밀번호")

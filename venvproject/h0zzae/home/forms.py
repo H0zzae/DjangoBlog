@@ -10,3 +10,6 @@ class ReplyForm(ModelForm):
     class Meta:
         model = Reply
         fields = ['userName','content','password']
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['content'].label = "댓글"
