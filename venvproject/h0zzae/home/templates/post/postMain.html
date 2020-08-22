@@ -5,7 +5,7 @@
     <div id="postDiv">
         <div id="postCategory">
             {% for category in categorys %}
-                <a href="">{{category.name}}</a>
+                <a href='category/{{category.id}}'>{{category.name}}</a>
             {% endfor %}
         </div>
         <div id="newestPostperCategory">

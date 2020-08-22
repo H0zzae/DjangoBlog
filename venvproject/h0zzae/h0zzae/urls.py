@@ -23,6 +23,6 @@ urlpatterns = [
     path('post/', home.views.postmain, name='postmain'),
     path('profile/', home.views.profile, name='profile'),
     path('writePost/', home.views.write, name='writePost'),
-    # path('post/',include('post.urls')),
+    path('post/category/<int:category_id>', home.views.getCategory, name ='categoryDetail'),
     path('post/<int:post_id>',home.views.getPost, name='detail'),
 ]

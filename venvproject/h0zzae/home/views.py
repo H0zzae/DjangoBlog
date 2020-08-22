@@ -18,6 +18,7 @@ def profile(request):
 def write(request):
     if request.method=='POST':
         form = PostForm(request.POST or None, request.FILES or None)
+        # form.instance.category_num_id = category_id
         if form.is_valid():
             form.save()
         return redirect('/post')
@@ -37,3 +38,8 @@ def getPost(request,post_id):
     reply_form = ReplyForm()
     Replys = post.Replys.all()
     return render(request, 'post/detail.html', {'post': post, 'replys': Replys, 'reply_form': reply_form})
+
+def getCategory(request,category_id):
+    category = get_object_or_404(Category, pk=category_id)
+
+    return render(request, 'post/categoryPost.html',{'category':category})
