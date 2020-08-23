@@ -20,18 +20,19 @@ def write(request):
         post = Post()
         form = PostForm(request.POST or None, request.FILES or None)
         # form.instance.category_num_id = category_id
-        for img in request.FILES.getlist('images'):
-            photo = Photo()
-            photo.post = post.id
-            photo.image = img
-            photo.save()
+
         if form.is_valid():
             # post.category_num = form.category_num
-            post.title = request.POST.title
-            post.content = form.content
+            post.title = request.POST['title']
+            post.content = request.POST['content']
             post.created_at = timezone.datetime.now()
-            form.save()
-        return redirect('/post/'+str(post.id))
+            post.save()
+            for img in request.FILES.getlist('images'):
+                photo = Photo()
+                photo.post = post
+                photo.image = img
+                photo.save()
+        return redirect('/post/')
     else:
         form = PostForm()
 
