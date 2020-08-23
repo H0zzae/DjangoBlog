@@ -4,7 +4,9 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <h1>{{post.title}}</h1>
 <p>{{post.created_at}}</p>
-<image>{{post.attach}}</image>
+{% for photo in post.photo_set.all %}
+<img src="{{photo.image.url}}"></img>
+{% endfor %}
 <p>{{post.content}}</p>
     <div class="ReplyFormPart">
         <form action="" method="post" >

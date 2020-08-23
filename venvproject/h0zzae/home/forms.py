@@ -4,7 +4,7 @@ from .models import Post,Reply
 class PostForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content','attach']
+        fields = ['title', 'content']
 
 class ReplyForm(ModelForm):
     class Meta:
