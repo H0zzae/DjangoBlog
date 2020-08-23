@@ -13,9 +13,9 @@
             <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% for post in posts %}
                 <br>
-                <a href="">{{post.title}}</a>
+                <a href='./{{post.id}}'>{{post.title}}</a>
                 <p>{{post.summary}}</p>
-                <a href="">...더보기</a>
+                <a href='./{{post.id}}'>...더보기</a>
                 <br>
             {% endfor %}
         </div>
