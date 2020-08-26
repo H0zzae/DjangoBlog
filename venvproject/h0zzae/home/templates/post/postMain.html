@@ -9,14 +9,14 @@
             {% endfor %}
         </div>
         <div id="newestPostperCategory">
-            <p>최근 글</p>
+            <h1>최근 글</h1>
             {% block content %}{% endblock content %}
-            <button onclick="location.href = '/writePost/'">글쓰기</button>
+            <button onclick="location.href = '/writePost/'" id="writePostButton">글쓰기</button>
             {% for post in posts %}
-                <div>
-                    <a href='/post/{{post.id}}'>{{post.title}}</a>
+                <div class="postsInMain">
+                    <a href='/post/{{post.id}}' id="postTitleInMain">{{post.title}}</a>
                     <p>{{post.summary}}</p>
-                    <a href='/post/{{post.id}}'>...더보기</a>
+                    <a href='/post/{{post.id}}' id="goToDetail">...더보기</a>
                 </div>
             {% endfor %}
         </div>

@@ -2,12 +2,14 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
-<p>{{category.name}} > </p>
-{% for post in posts %}
-<div>
-    <a href='/post/{{post.id}}'>{{post.title}}</a>
-    <p>{{post.summary}}</p>
-    <a href='/post/{{post.id}}'>...더보기</a>
+<p id="categoryDetail">{{category.name}} > </p>
+<div id="newestPostperCategory">
+    {% for post in posts %}
+        <div class="postsInMain">
+            <a href='/post/{{post.id}}' id="postTitleInMain">{{post.title}}</a>
+            <p>{{post.summary}}</p>
+            <a href='/post/{{post.id}}' id="goToDetail">...더보기</a>
+        </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock content %}

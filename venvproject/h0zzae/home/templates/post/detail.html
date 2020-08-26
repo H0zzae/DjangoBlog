@@ -5,7 +5,7 @@
 <h1>{{post.title}}</h1>
 <p>{{post.created_at}}</p>
 {% for photo in post.photo_set.all %}
-<img src="{{photo.image.url}}"></img>
+<img src="{{photo.image.url}}" style="width : 200px"></img>
 {% endfor %}
 <p>{{post.content}}</p>
     <div class="ReplyFormPart">
