@@ -17,6 +17,7 @@ def profile(request):
 
 def write(request):
     category = Category.objects.all()
+    selectedCategory = Category()
     if request.method=='POST':
         post = Post()
         form = PostForm(request.POST or None, request.FILES or None)
@@ -26,7 +27,8 @@ def write(request):
             post.title = request.POST['title']
             post.content = request.POST['content']
             post.created_at = timezone.datetime.now()
-            post.category_num = request.POST['categorys']
+            selectedCategory.id = request.POST['categorys']
+            post.category_num = selectedCategory
             post.save()
             for img in request.FILES.getlist('images'):
                 photo = Photo()

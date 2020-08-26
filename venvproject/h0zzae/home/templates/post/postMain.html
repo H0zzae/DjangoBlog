@@ -9,6 +9,7 @@
             {% endfor %}
         </div>
         <div id="newestPostperCategory">
+            <p>최근 글</p>
             {% block content %}{% endblock content %}
             <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% for post in posts %}
