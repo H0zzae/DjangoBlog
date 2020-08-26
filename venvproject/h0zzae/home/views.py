@@ -54,4 +54,5 @@ def getPost(request,post_id):
 def getCategory(request,category_id):
     category = get_object_or_404(Category, pk=category_id)
 
-    return render(request, 'post/categoryPost.html',{'category':category})
+    posts = category.Posts.all()
+    return render(request, 'post/categoryPost.html',{'category':category,'posts':posts})

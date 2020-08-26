@@ -5,18 +5,18 @@
     <div id="postDiv">
         <div id="postCategory">
             {% for category in categorys %}
-                <a href='category/{{category.id}}'>{{category.name}}</a>
+                <a href='/post/category/{{category.id}}'>{{category.name}}</a>
             {% endfor %}
         </div>
         <div id="newestPostperCategory">
             {% block content %}{% endblock content %}
             <button onclick="location.href = '/writePost/'">글쓰기</button>
             {% for post in posts %}
-                <br>
-                <a href='./{{post.id}}'>{{post.title}}</a>
-                <p>{{post.summary}}</p>
-                <a href='./{{post.id}}'>...더보기</a>
-                <br>
+                <div>
+                    <a href='/post/{{post.id}}'>{{post.title}}</a>
+                    <p>{{post.summary}}</p>
+                    <a href='/post/{{post.id}}'>...더보기</a>
+                </div>
             {% endfor %}
         </div>
     </div>

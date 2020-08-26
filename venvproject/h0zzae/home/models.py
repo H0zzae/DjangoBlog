@@ -8,7 +8,7 @@ class Category(models.Model):
         return self.name
 
 class Post(models.Model):
-    category_num = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name = "소속 카테고리 번호")
+    category_num = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name = "소속 카테고리 번호", related_name='Posts')
     title = models.CharField(max_length=50, null=False, verbose_name = "게시글 제목")
     content = models.TextField(null=False, verbose_name = "게시글 내용")
     created_at = models.DateTimeField(default = timezone.now, verbose_name = "작성시간")
