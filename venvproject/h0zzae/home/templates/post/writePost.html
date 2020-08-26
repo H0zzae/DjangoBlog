@@ -6,6 +6,12 @@
         <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
+            <select name="categorys">
+                <option value="">카테고리 선택</option>
+                {% for category in categorys %}
+                <option value="{{category.id}}">{{category.name}}</option>
+                {% endfor %}
+            </select>
             <input type="file" name="images" multiple>
             <input type="submit" value="작성완료">
         </form>

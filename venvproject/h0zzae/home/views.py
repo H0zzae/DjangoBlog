@@ -16,6 +16,7 @@ def profile(request):
     return render(request, 'profile/profile.html')
 
 def write(request):
+    category = Category.objects.all()
     if request.method=='POST':
         post = Post()
         form = PostForm(request.POST or None, request.FILES or None)
@@ -36,11 +37,10 @@ def write(request):
     else:
         form = PostForm()
 
-    return render(request, 'post/writePost.html', {'form':form})
+    return render(request, 'post/writePost.html', {'form':form, 'categorys':category})
 
 def getPost(request,post_id):
     post = get_object_or_404(Post, pk=post_id)
-
     if request.method == 'POST':
         reply_form = ReplyForm(request.POST)
         # reply_form.instance.userName_id = request.user.id
