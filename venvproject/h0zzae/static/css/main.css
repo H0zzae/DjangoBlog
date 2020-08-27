@@ -209,3 +209,64 @@ h1 {
     border-radius : 10px;
 
 }
+#detailPost {
+    width : 90%;
+    border-bottom : dashed 3px #E2DEFA;
+}
+#createdTime {
+    position : relative;
+    display : flex;
+    color : #737373;
+    margin: -55px 0 0 70%;
+}
+#detailPost img {
+    display: block;
+    margin: 30px auto;
+}
+#PostContent {
+    margin : 30px 20px;
+}
+.ReplyFormPart {
+    display : inline-block;
+    margin : 10px;
+    width : 90%;
+}
+.ReplyFormPart p {
+    display : inline-block;
+    width : 200px;
+}
+#submitBtn {
+    background-color : #E2DEFA;
+    border : none;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+#submitBtn:focus {
+    outline : none;
+    border : none;
+    box-shadow: 2px 2px #999;
+}
+#Replydiv {
+    width: 90%;
+    background-color: #E2DEFA;
+    border-radius: 10px;
+    padding: 20px;
+}
+#Replydiv div {
+    margin-bottom: 30px;
+    padding-bottom : 30px;
+    border-bottom : 1px solid #777;
+}
+#Replydiv #user {
+    position : relative;
+    font-weight : bold;
+}
+#Replydiv #time {
+    position : absolute;
+    font-size : 0.7em;
+    color : #999;
+    margin : -30px 0 0 70%;
+}
+#Replydiv #content {
+    margin : 0 0 0 30px;
+}
