@@ -3,6 +3,9 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <div id="newestPostperCategory" style="margin : 62px 0 0 0">
+    <div class="delete">
+        <p><a href="{{post.id}}/delete">삭제</a></p>
+    </div>
     <div id="detailPost">
         <h1>{{post.title}}</h1>
         <p id="createdTime">{{post.created_at}}</p>

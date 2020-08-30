@@ -58,3 +58,8 @@ def getCategory(request,category_id):
 
     posts = category.Posts.all()
     return render(request, 'post/categoryPost.html',{'category':category,'posts':posts})
+
+def delete(request,post_id):
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return redirect('/post')

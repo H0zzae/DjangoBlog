@@ -25,4 +25,5 @@ urlpatterns = [
     path('writePost/', home.views.write, name='writePost'),
     path('post/category/<int:category_id>', home.views.getCategory, name ='categoryDetail'),
     path('post/<int:post_id>',home.views.getPost, name='detail'),
+    path('post/<int:post_id>/delete',home.views.delete, name='delete'),
 ]
