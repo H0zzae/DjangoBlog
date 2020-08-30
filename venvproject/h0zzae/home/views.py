@@ -63,3 +63,25 @@ def delete(request,post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return redirect('/post')
+
+def editPost(request, post_id):
+    category = Category.objects.all()
+    post = Post.objects.get(id=post_id)
+    if request.method =='POST':
+        form = PostForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            print(form.cleaned_data)
+            post.title = form.cleaned_data['title']
+            post.content = form.cleaned_data['content']
+            post.edited_at = timezone.datetime.now()
+            post.save()
+            for img in request.FILES.getlist('images'):
+                photo = Photo()
+                photo.post = post
+                photo.image = img
+                photo.save()
+        return redirect('/post/'+str(post_id))
+    else:
+        form = PostForm()
+
+    return render(request, 'post/editPost.html', {'form': form})

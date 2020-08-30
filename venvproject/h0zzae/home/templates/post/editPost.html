@@ -1,0 +1,13 @@
+{% extends "../TopNavBar/topnav.html" %}
+{% load static %}
+{% block content %}
+<div class="PostFormPart">
+    <h1>게시글 수정</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="file" name="images" multiple>
+        <input type="submit" value="수정완료">
+    </form>
+</div>
+{% endblock content %}
