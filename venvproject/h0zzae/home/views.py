@@ -64,6 +64,11 @@ def delete(request,post_id):
     post.delete()
     return redirect('/post')
 
+def replyDelete(request,reply_id,post_id):
+    reply = Reply.objects.get(id=reply_id)
+    reply.delete()
+    return redirect('/post/'+str(post_id))
+
 def editPost(request, post_id):
     category = Category.objects.all()
     post = Post.objects.get(id=post_id)
