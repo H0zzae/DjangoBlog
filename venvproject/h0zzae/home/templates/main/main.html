@@ -1,6 +1,7 @@
 {% extends "../TopNavBar/topnav.html" %}
 {% load static %}
 {% block mainContent %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
 <div id="contents">
     <div id="profile">
         <img src="{%static 'image/profile_photo.jpg' %}">
@@ -11,11 +12,15 @@
     <div id="postPart">
         <div id="newPost" class="post">
             <h2>New Post</h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolor inventore ipsa! Aliquid amet culpa, cumque fuga ipsum ullam! Alias architecto consectetur hic nihil, nobis omnis quod tempore velit vero.
+            <a href='/post/{{newPost.id}}' class="postTitleInMain">{{newPost.title}}</a>
+            <p>{{newPost.summary}}</p>
+            <a href='/post/{{newPost.id}}' class="goToDetail">...더보기</a>
         </div>
         <div id="bestPost" class="post">
-            <h2>Best Post</h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id maxime quia temporibus. Deleniti dolor eaque fuga fugiat illum quasi suscipit! Laborum, quas, voluptas. Beatae blanditiis dicta rerum similique vero voluptatum.
+            <h2>Recommend Post</h2>
+            <a href='/post/{{recommendPost.id}}' class="postTitleInMain">{{recommendPost.title}}</a>
+            <p>{{recommendPost.summary}}</p>
+            <a href='/post/{{recommendPost.id}}' class="goToDetail">...더보기</a>
         </div>
     </div>
 </div>

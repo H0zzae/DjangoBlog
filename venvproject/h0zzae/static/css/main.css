@@ -173,7 +173,7 @@ h1 {
     padding : 0 0 30px 0;
     border-bottom : dashed 3px #E2DEFA;
 }
-#postTitleInMain {
+.postTitleInMain {
     text-decoration : none;
     color : #000;
     font-size : 1.2em;
@@ -185,7 +185,7 @@ h1 {
     padding : 0 0 0 10px;
     display : inline-block;
 }
-#goToDetail {
+.goToDetail {
     color : #737373;
     position : relative;
     display : flex;

@@ -4,7 +4,9 @@ from .forms import PostForm,ReplyForm
 
 # Create your views here.
 def main(request):
-    return render(request,'main/main.html')
+    NewPost = Post.objects.last()
+    RecommendPost = Post.objects.last()
+    return render(request,'main/main.html',{'newPost':NewPost,'recommendPost':RecommendPost})
 
 def postmain(request):
     categorys = Category.objects.all()
