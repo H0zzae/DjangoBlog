@@ -13,10 +13,15 @@ class Post(models.Model):
     content = models.TextField(null=False, verbose_name = "게시글 내용")
     created_at = models.DateTimeField(default = timezone.now, verbose_name = "작성시간")
     edited_at = models.DateTimeField(default = timezone.now, verbose_name = "수정시간")
+    hit_count = models.PositiveIntegerField(default=0)
     def __str__(self):
         return self.title
     def summary(self):
         return self.content[:100]
+    @property
+    def update_counter(self):
+        self.hit_count = self.hit_count+1
+        self.save()
 
 class Photo(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
@@ -28,8 +33,3 @@ class Reply(models.Model):
     content = models.CharField(max_length=200, verbose_name="댓글내용")
     password = models.CharField(default="0000", max_length=4, verbose_name="댓글 비밀번호")
     created_at = models.DateTimeField(default = timezone.now, verbose_name = "댓글작성시간")
-
-class HitCount(models.Model):
-    ip = models.CharField(max_length=15, default=None, null=True)  # ip 주소
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, default=None, null=True)  # 게시글 Foreign Key on_delete=필수
-    date = models.DateField(default=timezone.now, null=True, blank=True)  # 조회수가 올라갔던 날짜

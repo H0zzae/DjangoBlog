@@ -1,6 +1,7 @@
 {% extends "../TopNavBar/topnav.html" %}
 {% load static %}
 {% block content %}
+{{post.update_counter}}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <div id="newestPostperCategory" style="margin : 62px 0 0 0">
     <div class="edit">
@@ -11,9 +12,10 @@
     </div>
     <div id="detailPost">
         <h1>{{post.title}}</h1>
+        <p>{{post.hit_count}}</p>
         <p id="createdTime">{{post.created_at}}</p>
         {% for photo in post.photo_set.all %}
-        <img src="{{photo.image.url}}" style="width : 200px"></img>
+        <img src="{{photo.image.url}}" style="width : 200px">
         {% endfor %}
         <p id="PostContent">{{post.content}}</p>
     </div>
@@ -21,6 +23,7 @@
         <form action="" method="post" >
             {% csrf_token %}
             {{ reply_form.as_p }}
+            <label for="password">비밀번호<input type="password" value="" id="password"></label>
             <input type="submit" value="댓글달기" id="submitBtn">
         </form>
     </div>
