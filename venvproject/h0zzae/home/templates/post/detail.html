@@ -1,9 +1,9 @@
 {% extends "../TopNavBar/topnav.html" %}
 {% load static %}
 {% block content %}
-{{post.update_counter}}
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <div id="newestPostperCategory" style="margin : 62px 0 0 0">
+    <div id="hitcount">{{post.update_counter}}</div>
     <div class="edit">
         <p><a href="{{post.id}}/edit">수정하기</a></p>
     </div>

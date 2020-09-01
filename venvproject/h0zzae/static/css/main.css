@@ -213,6 +213,12 @@ h1 {
     width : 90%;
     border-bottom : dashed 3px #E2DEFA;
 }
+
+#hitcount {
+    visibility : hidden;
+    width:0;
+    height:0;
+}
 #createdTime {
     position : relative;
     display : flex;
