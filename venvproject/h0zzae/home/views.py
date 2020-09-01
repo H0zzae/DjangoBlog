@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect,get_object_or_404, HttpResponse
 from .models import *
 from .forms import PostForm,ReplyForm
-# import md5
 
 # Create your views here.
 def main(request):
@@ -24,9 +23,7 @@ def write(request):
     if request.method=='POST':
         post = Post()
         form = PostForm(request.POST or None, request.FILES or None)
-        # form.instance.category_num_id = category_id
         if form.is_valid():
-            # post.category_num = form.category_num
             post.title = request.POST['title']
             post.content = request.POST['content']
             post.created_at = timezone.datetime.now()
