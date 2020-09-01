@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect,get_object_or_404, HttpResponse
 from .models import *
 from .forms import PostForm,ReplyForm
+# import md5
 
 # Create your views here.
 def main(request):
@@ -47,10 +48,10 @@ def getPost(request,post_id):
     post = get_object_or_404(Post, pk=post_id)
     if request.method == 'POST':
         reply_form = ReplyForm(request.POST)
-        # reply_form.instance.userName_id = request.user.id
         reply_form.instance.post_num_id = post_id
         if reply_form.is_valid():
             replyform = reply_form.save()
+
     reply_form = ReplyForm()
     Replys = post.Replys.all()
     return render(request, 'post/detail.html', {'post': post, 'replys': Replys, 'reply_form': reply_form})
@@ -69,15 +70,16 @@ def delete(request,post_id):
 def replyDelete(request,reply_id,post_id):
     reply = Reply.objects.get(id=reply_id)
     reply.delete()
+
     return redirect('/post/'+str(post_id))
 
 def editPost(request, post_id):
     category = Category.objects.all()
     post = Post.objects.get(id=post_id)
+
     if request.method =='POST':
         form = PostForm(request.POST or None, request.FILES or None)
         if form.is_valid():
-            print(form.cleaned_data)
             post.title = form.cleaned_data['title']
             post.content = form.cleaned_data['content']
             post.edited_at = timezone.datetime.now()
@@ -89,6 +91,6 @@ def editPost(request, post_id):
                 photo.save()
         return redirect('/post/'+str(post_id))
     else:
-        form = PostForm()
+        form = PostForm(instance=post)
 
     return render(request, 'post/editPost.html', {'form': form})
