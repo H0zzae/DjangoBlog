@@ -4,9 +4,16 @@ from .forms import PostForm,ReplyForm
 
 # Create your views here.
 def main(request):
+    profile = H0zzae_Data.objects.all()
     NewPost = Post.objects.last()
-    RecommendPost = Post.objects.last()
-    return render(request,'main/main.html',{'newPost':NewPost,'recommendPost':RecommendPost})
+    Posts = Post.objects.all()
+    RecommendPost = Post()
+    count = 0
+    for post in Posts:
+        if post.hit_count>count:
+            count = post.hit_count
+            RecommendPost = post
+    return render(request,'main/main.html',{'profile':profile,'newPost':NewPost,'recommendPost':RecommendPost})
 
 def postmain(request):
     categorys = Category.objects.all()
@@ -15,7 +22,9 @@ def postmain(request):
     return render(request,'post/postMain.html', {'categorys': categorys,'posts':posts})
 
 def profile(request):
-    return render(request, 'profile/profile.html')
+    profileDatas = H0zzae_Data.objects.all()
+    # print(profileData.githubUrl)
+    return render(request, 'profile/profile.html',{'profile':profileDatas})
 
 def write(request):
     category = Category.objects.all()
@@ -71,7 +80,6 @@ def replyDelete(request,reply_id,post_id):
     return redirect('/post/'+str(post_id))
 
 def editPost(request, post_id):
-    category = Category.objects.all()
     post = Post.objects.get(id=post_id)
 
     if request.method =='POST':
