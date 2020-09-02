@@ -70,12 +70,15 @@ def getCategory(request,category_id):
 
 def delete(request,post_id):
     post = Post.objects.get(id=post_id)
-    post.delete()
-    return redirect('/post')
+    Admin = H0zzae_Data.objects.last()
+    passwordConfirm=request.POST.get('confirmPassword', False)
+    if Admin.AdminPassword==passwordConfirm:
+        post.delete()
+        return redirect('/post')
+    return render(request, 'post/delete.html')
 
 def replyDelete(request,reply_id,post_id):
     reply = Reply.objects.get(id=reply_id)
-    print(request.POST.get('confirmPassword', False))
     passwordConfirm=request.POST.get('confirmPassword', False)
     if reply.password==passwordConfirm:
         reply.delete()
