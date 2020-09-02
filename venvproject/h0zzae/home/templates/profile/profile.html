@@ -4,9 +4,12 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <div id="contents">
         <div id="profile">
-            <img src="{%static 'image/profile_photo.jpg' %}">
-            <div id="profile_name">H0zzaelimi</div>
+            <img src="{{profile.profileImage.url}}">
+            <div id="profile_name">{{profile.nickname}}</div>
+            <a href="{{profile.githubUrl}}" target="_blank" class="github">github</a>
         </div>
-        <div id="adminDetail"></div>
+        <div id="adminDetail">
+            <div class="profileText">{{profile.profileText}}</div>
+        </div>
     </div>
 {% endblock content %}

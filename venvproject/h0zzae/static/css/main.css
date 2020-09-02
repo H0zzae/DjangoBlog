@@ -52,7 +52,6 @@ h1 {
 	display: inline-block;
 	padding: 42px 0 0 1%;
 	text-align: center;
-
 }
 #profile img {
 	width: 200px;
@@ -87,20 +86,16 @@ h1 {
 	position: absolute;
 	border-left: 3px dashed #B3DCF3;
 }
+#postPart div {
+    margin-bottom : 30px;
+}
 .post{
-	position: absolute;
+	position: relative;
 	width: 55%;
-	height: 30%;
+	height: 50%;
 	background-color: rgb(255,255,255,0.7);
 	border-radius: 22px;
 	border: #E2DEFA solid;
-}
-#newPost {
-
-}
-#bestPost {
-	top: 40%;
-	position: absolute;
 }
 #adminDetail {
 	position: absolute;
@@ -110,6 +105,25 @@ h1 {
 	top: 245px;
 	background-color: #E2DEFA;
 	border-radius: 39px;
+}
+.profileText {
+    font-size : 14px;
+    width : 100%;
+    margin : 30px;
+}
+#profile .github {
+    display : block;
+    color : #fff;
+    background-color : #000;
+    padding : 14px;
+    border-radius:33px;
+    text-decoration : none;
+    position : relative;
+    margin : 50px auto;
+    width : 45px;
+}
+#profile .github:hover {
+    box-shadow : 0px 4px #777
 }
 #postDiv {
 	width: 80%;
@@ -207,13 +221,12 @@ h1 {
     background: #E2DEFA;
     padding: 15px 15px 15px 30px;
     border-radius : 10px;
-
 }
+
 #detailPost {
     width : 90%;
     border-bottom : dashed 3px #E2DEFA;
 }
-
 #hitcount {
     visibility : hidden;
     width:0;
@@ -229,8 +242,24 @@ h1 {
     display: block;
     margin: 30px auto;
 }
+#detailPost .viewCount{
+    position : absolute;
+    display : inline;
+    margin-left : 812px;
+    margin-top : 8px;
+    color : #777;
+}
 #PostContent {
     margin : 30px 20px;
+}
+.editDelete {
+    margin-left : 960px;
+}
+.edit {
+    display : inline-block;
+}
+.delete {
+    display : inline-block;
 }
 .ReplyFormPart {
     display : inline-block;

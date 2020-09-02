@@ -4,7 +4,7 @@ from .forms import PostForm,ReplyForm
 
 # Create your views here.
 def main(request):
-    profile = H0zzae_Data.objects.all()
+    profile = H0zzae_Data.objects.last()
     NewPost = Post.objects.last()
     Posts = Post.objects.all()
     RecommendPost = Post()
@@ -22,7 +22,7 @@ def postmain(request):
     return render(request,'post/postMain.html', {'categorys': categorys,'posts':posts})
 
 def profile(request):
-    profileDatas = H0zzae_Data.objects.all()
+    profileDatas = H0zzae_Data.objects.last()
     # print(profileData.githubUrl)
     return render(request, 'profile/profile.html',{'profile':profileDatas})
 

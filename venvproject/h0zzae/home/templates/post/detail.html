@@ -4,20 +4,22 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 <div id="newestPostperCategory" style="margin : 62px 0 0 0">
     <div id="hitcount">{{post.update_counter}}</div>
-    <div class="edit">
-        <p><a href="{{post.id}}/edit">수정하기</a></p>
-    </div>
-    <div class="delete">
-        <p><a href="{{post.id}}/delete">삭제</a></p>
-    </div>
     <div id="detailPost">
         <h1>{{post.title}}</h1>
-        <p>{{post.hit_count}}</p>
+        <p class="viewCount">조회수 {{post.hit_count}}</p>
         <p id="createdTime">{{post.created_at}}</p>
         {% for photo in post.photo_set.all %}
         <img src="{{photo.image.url}}" style="width : 200px">
         {% endfor %}
         <p id="PostContent">{{post.content}}</p>
+        <div class="editDelete">
+            <div class="edit">
+                <p><a href="{{post.id}}/edit">수정하기</a></p>
+            </div>
+            <div class="delete">
+                <p><a href="{{post.id}}/delete">삭제</a></p>
+        </div>
+    </div>
     </div>
     <div class="ReplyFormPart">
         <form action="" method="post" >

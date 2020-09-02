@@ -2,6 +2,12 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+class H0zzae_Data(models.Model):
+    nickname = models.CharField(max_length=20, null=False, verbose_name="닉네임")
+    profileText = models.CharField(max_length=200, null=False, verbose_name="자기소개")
+    githubUrl=models.URLField(verbose_name="깃허브사이트")
+    profileImage = models.ImageField(upload_to='static/image/',blank=True, null=True, verbose_name="프로필사진")
+
 class Category(models.Model):
     name = models.CharField(default="newCategory", max_length=50, null=False, verbose_name = "카테고리 제목")
     def __str__(self):
