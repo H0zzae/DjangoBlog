@@ -75,9 +75,12 @@ def delete(request,post_id):
 
 def replyDelete(request,reply_id,post_id):
     reply = Reply.objects.get(id=reply_id)
-    reply.delete()
-
-    return redirect('/post/'+str(post_id))
+    print(request.POST.get('confirmPassword', False))
+    passwordConfirm=request.POST.get('confirmPassword', False)
+    if reply.password==passwordConfirm:
+        reply.delete()
+        return redirect('/post/'+str(post_id))
+    return render(request, 'post/delete.html')
 
 def editPost(request, post_id):
     post = Post.objects.get(id=post_id)

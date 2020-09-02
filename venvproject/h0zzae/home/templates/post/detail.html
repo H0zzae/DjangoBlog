@@ -25,7 +25,6 @@
         <form action="" method="post" >
             {% csrf_token %}
             {{ reply_form.as_p }}
-            <label for="password">비밀번호<input type="password" value="" id="password"></label>
             <input type="submit" value="댓글달기" id="submitBtn">
         </form>
     </div>
